@@ -14,24 +14,31 @@ import { RootState } from "../store/store";
 import { setDisplay } from "../store/sideNavbarSlice";
 import { useMediaQuery } from "react-responsive";
 
-const SideNavbar = () => {
-  // const disp = useSelector((state: RootState) => state.sideNavbar.display);
-  // const dispatch = useDispatch();
-  // const handleSideNavbar = () => {
-  //   dispatch(setDisplay(!disp));
-  // };
+const MobileSideNavbar = () => {
+  const disp = useSelector((state: RootState) => state.sideNavbar.display);
+  const dispatch = useDispatch();
+  const handleSideNavbar = () => {
+    dispatch(setDisplay(!disp));
+  };
 
   return (
-    <div className="bg-stone-900 sm:hidden md:block md:w-[12rem] lg:w-[12rem]">
+    <div
+      className={`border-2 border-black h-[438vh] w-[100vw] z-10 bg-stone-900 md:hidden ${
+        disp ? "absolute" : "hidden"
+      }`}
+    >
       <div className="flex flex-col gap-11">
-        <div className="flex flex-row mt-[2rem] gap-2 ml-[2vw]">
+        <div className="flex flex-row mt-[2rem] gap-2 ml-[2rem]">
           <img src={coffee} alt="" />
           <h2 className="opacity-80 text-white text-base font-normal font-['Poppins'] leading-normal mt-[5px]">
             WATCH
           </h2>
         </div>
         <Link to="/">
-          <div className="flex flex-row ml-[2vw] gap-2">
+          <div
+            className="flex flex-row ml-[2rem] gap-2"
+            onClick={handleSideNavbar}
+          >
             <img src={film} alt="" />
             <h3 className="opacity-80 text-white text-base font-normal font-['Poppins'] leading-normal">
               Home
@@ -39,7 +46,10 @@ const SideNavbar = () => {
           </div>
         </Link>
         <Link to="/favourite">
-          <div className="flex flex-row ml-[2vw] gap-2">
+          <div
+            className="flex flex-row ml-[2rem] gap-2"
+            onClick={handleSideNavbar}
+          >
             <img src={heart} alt="" />
             <h3 className="opacity-80 text-white text-base font-normal font-['Poppins'] leading-normal">
               Favourites
@@ -47,38 +57,68 @@ const SideNavbar = () => {
           </div>
         </Link>
         <Link to="/trending">
-          <div className="flex flex-row ml-[2vw] gap-2">
+          <div
+            className="flex flex-row ml-[2rem] gap-2"
+            onClick={handleSideNavbar}
+          >
             <img src={trending} alt="" />
             <h3 className="opacity-80 text-white text-base font-normal font-['Poppins'] leading-normal">
               Trending
             </h3>
           </div>
         </Link>
-        <div className="flex flex-row ml-[2vw] gap-2 ">
+        <div className="flex flex-row ml-[2rem] gap-2 ">
           <img src={calendar} alt="" />
           <h3 className="opacity-80 text-white text-base font-normal font-['Poppins'] leading-normal">
             Coming soon
           </h3>
         </div>
-        <div className="flex flex-row ml-[2vw] gap-2 mt-[7rem]">
+        <div
+          className="flex flex-row ml-[2rem] gap-2"
+          onClick={handleSideNavbar}
+        >
+          <img src={film} alt="" />
+          <h3 className="opacity-80 text-white text-base font-normal font-['Poppins'] leading-normal">
+            Movies
+          </h3>
+        </div>
+        <div
+          className="flex flex-row ml-[2rem] gap-2"
+          onClick={handleSideNavbar}
+        >
+          <img src={heart} alt="" />
+          <h3 className="opacity-80 text-white text-base font-normal font-['Poppins'] leading-normal">
+            Series
+          </h3>
+        </div>
+        <div
+          className="flex flex-row ml-[2rem] gap-2"
+          onClick={handleSideNavbar}
+        >
+          <img src={trending} alt="" />
+          <h3 className="opacity-80 text-white text-base font-normal font-['Poppins'] leading-normal">
+            Documentaries
+          </h3>
+        </div>
+        <div className="flex flex-row ml-[2rem] gap-2 mt-[7rem]">
           <img src={users} alt="" />
           <h3 className="opacity-80 text-white text-base font-normal font-['Poppins'] leading-normal">
             Community
           </h3>
         </div>
-        <div className="flex flex-row ml-[2vw] gap-2 ">
+        <div className="flex flex-row ml-[2rem] gap-2 ">
           <img src={message} alt="" />
           <h3 className="opacity-80 text-white text-base font-normal font-['Poppins'] leading-normal">
             Social
           </h3>
         </div>
-        <div className="flex flex-row ml-[2vw] gap-2 mt-[7rem]">
+        <div className="flex flex-row ml-[2rem] gap-2 mt-[7rem]">
           <img src={sliders} alt="" />
           <h3 className="opacity-80 text-white text-base font-normal font-['Poppins'] leading-normal">
             Settings
           </h3>
         </div>
-        <div className="flex flex-row ml-[2vw] gap-2 ">
+        <div className="flex flex-row ml-[2rem] gap-2 ">
           <img src={logout} alt="" />
           <h3 className="opacity-80 text-white text-base font-normal font-['Poppins'] leading-normal">
             Logout
@@ -89,4 +129,4 @@ const SideNavbar = () => {
   );
 };
 
-export default SideNavbar;
+export default MobileSideNavbar;

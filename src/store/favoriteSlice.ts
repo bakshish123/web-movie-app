@@ -1,8 +1,7 @@
-// favoriteSlice.ts
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface FavoriteState {
-  favorites: string[]; // assuming the string is the unique identifier for the card
+  favorites: string[];
 }
 
 const initialState: FavoriteState = {
@@ -10,7 +9,7 @@ const initialState: FavoriteState = {
 };
 
 const favoriteSlice = createSlice({
-  name: 'favorite',
+  name: "favorite",
   initialState,
   reducers: {
     addToFavorites: (state, action: PayloadAction<string>) => {

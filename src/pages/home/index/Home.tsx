@@ -1,17 +1,18 @@
-import React from 'react';
-import BgImg from '../../../assets/images/Rectangle 215.png';
-import Hero from '../components/Hero';
-import CardSection1 from '../components/CardSetion1';
-import SideNavbar from '../../../components/SideNavbar';
+import React from "react";
+import BgImg from "../../../assets/images/background_image.jpg";
+import Hero from "../components/Hero";
+import CardSection1 from "../components/CardSetion1";
+import SideNavbar from "../../../components/SideNavbar";
+import TopNavbar from "../../../components/TopNavbar";
+import MobileTopNavbar from "../../../components/MobileTopNavbar";
 
 const Home = () => {
-  
-
   return (
-    <div className='h-[95rem] w-full bg-slate-600 z-[-1]'>
-        <Hero />
-        <CardSection1 />
-      
+    <div className="bg-gradient-to-b from-black to-purple-900 sm:w-[100vw] md:w-[75vw] lg:w-[85vw]">
+      <TopNavbar />
+      <MobileTopNavbar />
+      <Hero />
+      <CardSection1 />
     </div>
   );
 };

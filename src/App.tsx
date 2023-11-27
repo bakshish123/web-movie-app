@@ -9,9 +9,7 @@ import Layout from './components/Layout';
 
 function App() {
   return (
-    <div className="App border-4 border-black">
-
-      
+    <div className="bg-black sm:w-[100vw] md:w-[100vw] lg:w-[100vw] m-0 p-0 ">
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
